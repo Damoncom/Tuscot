@@ -1,7 +1,37 @@
 {
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "printWidth": 80
-  }
-  
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "endOfLine": "auto",
+
+  "overrides": [
+    {
+      "files": "*.css",
+      "options": {
+        "parser": "css",
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "parser": "scss",
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": "*.less",
+      "options": {
+        "parser": "less",
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "none"
+      }
+    }
+  ]
+}

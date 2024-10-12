@@ -1,0 +1,36 @@
+.content_warrper {
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+  // background-color: lightBlue;
+}
+@media screen and (min-width: 480px) {
+  .content_warrper {
+    width: 660px;
+  }
+}
+@media screen and (min-width: 780px) {
+  .content_warrper {
+    width: 900px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .content_warrper {
+    width: 1100px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .content_warrper {
+    width: 1660px;
+  }
+}
+@media screen and (min-width: 2200px) {
+  .content_warrper {
+    width: 2300px;
+  }
+}
+/* //       320px - 480px：移动设备
+  // 481px - 768px：iPad、平板电脑
+  // 769px - 1024px：小屏幕、笔记本电脑
+  // 1025px - 1200px：台式机、大屏幕
+  // 1201px 及以上：超大屏幕、电视 */
