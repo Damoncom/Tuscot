@@ -37,7 +37,7 @@ export default function Login() {
           <div className="login">
             <div className="inputBox">
               <div className="nameBox">
-                <p>name:</p>
+                <p className="nameText">name:</p>
                 <input
                   value={input.nameInput}
                   className="nameInput"
@@ -45,9 +45,10 @@ export default function Login() {
                 />
               </div>
               <div className="pwdBox">
-                <p>password:</p>
+                <p className="pwdText">password:</p>
                 <input
                   value={input.pwdInput}
+                  type="password"
                   className="pwdInput"
                   onChange={handlePwdChange}
                 />
@@ -57,6 +58,7 @@ export default function Login() {
           <div className="submit" onClick={submit}>
             Login
           </div>
+          <p className="tip">Tip: name:guest password:guest</p>
         </div>
       </div>
       <div className="blur" />
