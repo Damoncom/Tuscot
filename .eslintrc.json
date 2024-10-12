@@ -1,0 +1,6 @@
+{
+  "extends": ["react-app", "react-app/jest", "plugin:prettier/recommended"],
+  "rules": {
+    // 在这里可以添加自定义的 ESLint 规则
+  }
+}
