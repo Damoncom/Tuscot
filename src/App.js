@@ -6,7 +6,7 @@ import './App.scss';
 function App() {
   return (
     <BrowserRouter>
-      <div className="content_warrper">
+      <div className="content_warrper" style={{ backgroundColor: '#F9F8F8' }}>
         <DefineRoutes></DefineRoutes>
       </div>
     </BrowserRouter>

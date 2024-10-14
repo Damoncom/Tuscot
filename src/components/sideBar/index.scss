@@ -1,0 +1,37 @@
+.sideBar {
+  width: 250px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  left: 0;
+  top: 81px;
+  .listUl {
+    margin-top: 31px;
+    .listLi {
+      cursor: pointer;
+      width: 219px;
+      height: 41px;
+      margin: 0 auto 14px 31px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // TODO:图片大小不一问题
+      .imgBox {
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+        .listIcon {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .listTitle {
+        font-size: 15px;
+        color: #b6b6b6;
+        margin: 0 auto 0 10px;
+      }
+    }
+  }
+}

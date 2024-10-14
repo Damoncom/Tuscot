@@ -4,6 +4,7 @@ import './index.scss';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  // 默认通关的账户密码信息
   const [user, setUser] = useState({
     name: 'guest',
     password: 'guest',
@@ -28,10 +29,17 @@ export default function Login() {
     });
   }
 
+  // submit按钮判断
   const navigate = useNavigate();
 
   function submit() {
-    navigate('/Home');
+    if (input.nameInput !== user.name) {
+      return alert('Wrong name');
+    }
+    if (input.pwdInput !== user.password) {
+      return alert('Wrong password');
+    }
+    return navigate('/Home');
   }
 
   return (

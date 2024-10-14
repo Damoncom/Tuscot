@@ -1,50 +1,60 @@
-import React from 'react';
-import index from './index.scss';
+import React, { useState } from 'react';
+import './index.scss';
+import logo from '../../img/circle.svg';
+import searchIcon from '../../img/manify.svg';
+import messageIcon from '../../img/bell.svg';
+import userIcon from '../../img/user.png';
+import arrowIcon from '../../img/arrow.svg';
 
 export default function Navigator() {
+  const [user, setUser] = useState({
+    img: userIcon,
+    username: 'Cavin petarrson',
+    job: 'Manager',
+  });
+
   return (
-    <div className={index.navigator}>
+    <div className="navigator">
       {/* logo */}
-      <div className={index.logoBox}>
-        <div className={index.imgBox}>
-          <img
-            src="../../../public/logo/main_logo.png"
-            className={index.logoImg}
-          />
-          <p className={index.logoText}>Tuscot</p>
+      <div className="logoBox">
+        <div className="imgBox">
+          {/* TODO:logo抠图 */}
+          {/* TODO:iconfont的引用失效 */}
+          {/* <img src="../../../public/logo/main_logo.png" className="logoImg" /> */}
+          {/* <i className="iconfont icon-circulation-full"></i> */}
+          <img src={logo} className="icon-circulation-full" alt="logo" />
+          <p className="logoText">Tuscot</p>
         </div>
       </div>
 
       {/* search */}
-      <div className={index.search}>
-        <input placeholder="Search..." className={index.searchInput}></input>
-        <i class="iconfont icon-fangdajing"></i>
+      <div className="search">
+        <input placeholder="Search..." className="searchInput"></input>
+        <img src={searchIcon} className="icon-fangdajing" alt="search" />
       </div>
 
       {/* add project按钮 */}
-      <div className={index.addProject}>
-        <p className={index.addText}>+ New Project</p>
+      <div className="addProject">
+        <p className="addText">+ New Project</p>
       </div>
 
       {/* message */}
-      <div className={index.message}>
-        <i class="iconfont icon-lingdang" />
+      <div className="message">
+        <img src={messageIcon} className="icon-lingdang" alt="message" />
       </div>
 
       {/* user */}
-      <div className={index.user}>
-        <div className={index.imgBox}>
-          <img src="" className={index.img} />
+      <div className="user">
+        <div className="imgBox">
+          <img src={user.img} className="img" />
         </div>
-        <div className={index.text}>
-          <p className={index.name}></p>
-          <p className={index.job}></p>
+        <div className="text">
+          <p className="name">{user.username}</p>
+          <p className="job">{user.job}</p>
         </div>
-      </div>
-
-      {/* arrow */}
-      <div className={index.arrow}>
-        <i class="iconfont icon-xialajiantouxiao" />
+        <div className="arrow">
+          <img src={arrowIcon} className="icon-xialajiantouxiao" />
+        </div>
       </div>
     </div>
   );
