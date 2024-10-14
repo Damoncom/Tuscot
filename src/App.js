@@ -1,12 +1,15 @@
-import React from 'react';
-import Login from './components/login/index';
+import React, { memo } from 'react';
+import DefineRoutes from './router';
+import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
 
 function App() {
   return (
-    <div className="content_warrper">
-      <Login />
-    </div>
+    <BrowserRouter>
+      <div className="content_warrper">
+        <DefineRoutes></DefineRoutes>
+      </div>
+    </BrowserRouter>
   );
 }
 

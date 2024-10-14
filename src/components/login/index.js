@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './index.scss';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [user, setUser] = useState({
@@ -17,7 +18,6 @@ export default function Login() {
     setInput({
       ...input,
       nameInput: e.target.value,
-      pwdInput: e.target.value,
     });
   }
 
@@ -28,7 +28,11 @@ export default function Login() {
     });
   }
 
-  function submit() {}
+  const navigate = useNavigate();
+
+  function submit() {
+    navigate('/Home');
+  }
 
   return (
     <>
