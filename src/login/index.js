@@ -39,7 +39,7 @@ export default function Login() {
     if (input.pwdInput !== user.password) {
       return alert('Wrong password');
     }
-    return navigate('/Home');
+    return navigate('/Dashboard');
   }
 
   return (

@@ -37,16 +37,22 @@
   .search {
     width: 349px;
     height: 54px;
-    margin-right: 15%;
+    margin-right: 10%;
     border-radius: 10px;
     background-color: #f7f8f9;
     display: flex;
     align-items: center;
     .searchInput {
+      background: none;
+      outline: none;
+      border: 0px;
       width: 329px;
       height: 34px;
       font-size: 20px;
       margin-left: 20px;
+    }
+    .searchInput::placeholder {
+      color: #b6b6b6;
     }
     .icon-fangdajing {
       width: 19px;
@@ -68,6 +74,7 @@
     .addText {
       color: white;
       font-size: 15px;
+      padding: 0 5px;
       white-space: noWrap;
     }
   }
@@ -85,7 +92,7 @@
   // user
   .user {
     height: 48px;
-    margin: 0 3% 0 auto;
+    margin: 0 4% 0 auto;
     display: flex;
     align-items: center;
 

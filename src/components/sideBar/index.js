@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import './index.scss';
-import dashboardIcon from '../../img/manage.svg';
-import dashboardIcon2 from '../../img/manage2.svg';
-import project from '../../img/task.svg';
-import project2 from '../../img/task2.svg';
-import task from '../../img/catalog.svg';
-import task2 from '../../img/catalog2.svg';
-import message from '../../img/manage.svg';
-import message2 from '../../img/manage2.svg';
-import analytics from '../../img/barChart.svg';
-import analytics2 from '../../img/barChart2.svg';
+import { useNavigate } from 'react-router-dom';
+import dashboardIcon from '../../img/sidebar/manage.png';
+import dashboardIcon2 from '../../img/sidebar/manage2.png';
+import project from '../../img/sidebar/task.png';
+import project2 from '../../img/sidebar/task2.png';
+import task from '../../img/sidebar/catalog.png';
+import task2 from '../../img/sidebar/catalog2.png';
+import message from '../../img/sidebar/message.png';
+import message2 from '../../img/sidebar/message2.png';
+import analytics from '../../img/sidebar/barChart.png';
+import analytics2 from '../../img/sidebar/barChart2.svg';
 
 // TODO:图片的导入
 export default function SideBar() {
@@ -47,13 +48,23 @@ export default function SideBar() {
     },
   ]);
 
-  //   每个项图片的显示状态
-  const [visibleImageIndex, setVisibleImageIndex] = useState(null);
+  //   每个项图片的显示状态,默认显示第一项
+  const [visibleImageIndex, setVisibleImageIndex] = useState(0);
+  const navigate = useNavigate();
 
   function chooseList(index) {
-    console.log(index);
-    // console.log(e.currentTarget.dataset);
-    setVisibleImageIndex((prevIndex) => (prevIndex === index ? null : index));
+    setVisibleImageIndex((prevIndex) => (prevIndex === index ? 0 : index));
+    if (index === 0) {
+      navigate('/Home/Dashboard');
+    } else if (index === 1) {
+      navigate('/Home/Projects');
+    } else if (index === 2) {
+      navigate('/Home/MyTask');
+    } else if (index === 3) {
+      navigate('/Home/Message');
+    } else if (index === 4) {
+      navigate('/Home/Analytics');
+    }
   }
 
   return (
@@ -73,9 +84,17 @@ export default function SideBar() {
                 className="listIcon"
                 alt="icon"
               />
+              <i className="icon-guanli"></i>
             </div>
 
-            <p className="listTitle">{item.title}</p>
+            <p
+              className="listTitle"
+              style={{
+                color: visibleImageIndex === index ? '#6c5dd3' : '#b6b6b6',
+              }}
+            >
+              {item.title}
+            </p>
           </li>
         ))}
       </ul>

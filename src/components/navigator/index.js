@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './index.scss';
-import logo from '../../img/circle.svg';
-import searchIcon from '../../img/manify.svg';
-import messageIcon from '../../img/bell.svg';
-import userIcon from '../../img/user.png';
-import arrowIcon from '../../img/arrow.svg';
+import logo from '../../img/navigator/main_logo.png';
+import searchIcon from '../../img/navigator/manify.svg';
+import messageIcon from '../../img/navigator/bell.svg';
+import userIcon from '../../img/navigator/user.png';
+import arrowIcon from '../../img/navigator/arrow.svg';
 
 export default function Navigator() {
   const [user, setUser] = useState({
