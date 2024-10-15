@@ -1,23 +1,23 @@
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
 
-function GaugeChart() {
+function GaugeChart2() {
   const getOption = () => ({
     series: [
       {
         type: 'gauge',
-        startAngle: 180,
+        startAngle: 360,
         endAngle: 0,
         min: 0,
-        max: 15000,
+        max: 100,
 
         itemStyle: {
-          color: '#6c5dd3',
+          color: '#52CD9F',
         },
         progress: {
           show: true,
           roundCap: true,
-          width: 25,
+          width: 20,
         },
         pointer: {
           show: false,
@@ -25,7 +25,7 @@ function GaugeChart() {
         axisLine: {
           roundCap: true,
           lineStyle: {
-            width: 25,
+            width: 20,
           },
         },
         axisTick: {
@@ -45,7 +45,7 @@ function GaugeChart() {
         },
         data: [
           {
-            value: 10468,
+            value: 82,
           },
         ],
       },
@@ -55,11 +55,9 @@ function GaugeChart() {
   return (
     <ReactECharts
       option={getOption()}
-      style={{ height: '300px', width: '370px' }}
+      style={{ height: '200px', width: '270px' }}
     />
   );
 }
 
-// TODO:传参处理
-
-export default GaugeChart;
+export default GaugeChart2;

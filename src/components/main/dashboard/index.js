@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import './index.scss';
 import GaugeChart from './gaugeChart';
+import GaugeChart2 from './GaugeChart2';
 import top1 from '../../../img/dashboard/top1.png';
 import top2 from '../../../img/dashboard/top2.png';
 import top3 from '../../../img/dashboard/top3.png';
 import top4 from '../../../img/dashboard/top4.png';
+import middleLeftIcon from '../../../img/dashboard/middle1.png';
+import middleMiddleIcon2 from '../../../img/dashboard/middle2.png';
+import middleMiddleIcon3 from '../../../img/dashboard/middle3.png';
 
 export default function Dashboard() {
   // top列表数据
@@ -54,8 +58,40 @@ export default function Dashboard() {
     name: 'Tasks',
   });
 
+  // middle的left数据
+  const [middleLeftData, setMiddleLeftData] = useState({
+    title: 'Complete Task Target',
+    num: 82,
+    name: 'Task',
+    bottomTitle: 'Completed Task',
+    botomName: 'Global',
+    count: 455,
+  });
+
+  // middle的middle数据
+  const [middleMiddleData, setMiddleMiddleData] = useState({
+    title: 'Task Count',
+    bottom: [
+      {
+        id: 1,
+        bottomTitle: 'Expanslon Europo',
+        botomName: 'Global',
+        count: 245,
+        icon: middleMiddleIcon2,
+      },
+      {
+        id: 2,
+        bottomTitle: 'Payment Promo',
+        botomName: 'Commercial',
+        count: 122,
+        icon: middleMiddleIcon3,
+      },
+    ],
+  });
+
   return (
     <div className="dashboard">
+      {/* top */}
       <div className="top">
         <ul className="top_ul">
           {topData.map((item) => (
@@ -85,7 +121,44 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="middle"></div>
+      {/* middle */}
+      <div className="middle">
+        <div className="middle_left">
+          <div className="middle_left_title">{middleLeftData.title}</div>
+          <GaugeChart2 />
+          <div className="draft">
+            <p className="draft_num">{middleLeftData.num}%</p>
+            <p className="draft_name">{middleLeftData.name}</p>
+          </div>
+
+          <div className="middle_left_bottom">
+            <img src={middleLeftIcon} className="left_bottom_img" alt="icon" />
+
+            <div className="left_bottom_text">
+              <p className="left_bottom_title">{middleLeftData.bottomTitle}</p>
+              <p className="left_bottom_name">{middleLeftData.botomName}</p>
+            </div>
+            <p className="left_bottom_count">{middleLeftData.count}</p>
+          </div>
+        </div>
+        <div className="middle_middle">
+          <div className="middle_middle_title">{middleMiddleData.title}</div>
+
+          {middleMiddleData.bottom.map((item) => (
+            <div className="middle_middle_bottom">
+              <img src={item.icon} className="middle_bottom_img" alt="icon" />
+              <div className="middle_bottom_text">
+                <p className="middle_bottom_title">{item.bottomTitle}</p>
+                <p className="middle_bottom_name">{item.botomName}</p>
+              </div>
+              <p className="middle_bottom_count">{item.count}</p>
+            </div>
+          ))}
+        </div>
+        <div className="middle_right"></div>
+      </div>
+
+      {/* bottom */}
       <div className="bottom"></div>
     </div>
   );
