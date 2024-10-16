@@ -3,6 +3,8 @@
   top: 102px;
   left: 280px;
   //   TODO:响应式布局
+
+  // top
   .top {
     width: 100%;
     height: 226px;
@@ -18,7 +20,8 @@
         width: 22%;
         min-width: 173px;
         height: 226px;
-        margin-right: 20px;
+        // margin-right: 20px;
+        margin-right: 5%;
         border-radius: 10px;
         background-color: white;
         .main {
@@ -88,15 +91,19 @@
         .right_name {
           font-size: 13px;
           color: #b6b6b6;
+          line-height: 20px;
         }
       }
     }
   }
+
+  // middle
   .middle {
-    width: 1135px;
+    // width: 1135px;
+    width: 100%;
     height: 353px;
+    // background-color: #6c5dd3;
     display: flex;
-    // align-items: center;
 
     .middle_left {
       width: 269px;
@@ -104,7 +111,7 @@
       border-radius: 10px;
       background-color: white;
       position: relative;
-      margin-right: 20px;
+      // margin-right: 20px;
 
       .middle_left_title {
         font-size: 17px;
@@ -124,6 +131,7 @@
 
         .draft_name {
           font-size: 13px;
+          line-height: 20px;
           color: #b6b6b6;
         }
       }
@@ -172,44 +180,100 @@
       border-radius: 10px;
       background-color: white;
       position: relative;
+      // margin-right: 20px;
+      margin: 0 10%;
 
       .middle_middle_title {
         font-size: 17px;
         margin: 26px 0 0 18px;
       }
+      .echarts-for-react {
+        margin-top: -35px;
+      }
 
-      .middle_middle_bottom {
-        width: 226px;
-        height: 37px;
-        margin: 20px 0 11px 18px;
-        display: flex;
-        align-items: center;
-
-        .middle_bottom_img {
-          width: 36px;
-          height: 36px;
-          cursor: pointer;
-        }
-
-        .middle_bottom_text {
+      .m_m_bottom {
+        position: absolute;
+        bottom: 10px;
+        .middle_middle_bottom {
+          width: 226px;
+          height: 37px;
+          margin: 20px 0 11px 18px;
           display: flex;
           align-items: center;
-          flex-direction: column;
-          margin-left: 6px;
-          .middle_bottom_title {
-            font-size: 13px;
-            line-height: 20px;
+
+          .middle_bottom_img {
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
           }
-          .middle_bottom_name {
-            font-size: 12px;
-            line-height: 20px;
-            color: #b6b6b6;
-            margin-right: auto;
+
+          .middle_bottom_text {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 6px;
+            .middle_bottom_title {
+              font-size: 13px;
+              line-height: 20px;
+            }
+            .middle_bottom_name {
+              font-size: 12px;
+              line-height: 20px;
+              color: #b6b6b6;
+              margin-right: auto;
+            }
+          }
+          .middle_bottom_count {
+            font-size: 13px;
+            margin-left: auto;
           }
         }
-        .middle_bottom_count {
-          font-size: 13px;
-          margin-left: auto;
+      }
+    }
+
+    .middle_right {
+      width: 558px;
+      height: 353px;
+      background-color: white;
+      border-radius: 10px;
+      margin-left: auto;
+
+      .middle_right_title {
+        font-size: 17px;
+        margin: 26px 0 21px 18px;
+      }
+
+      .middle_right_ul {
+        .middle_right_li {
+          width: 508px;
+          height: 40px;
+          margin: 0 0 20px 18px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          .right_li_icon {
+            margin-right: 15px;
+            .right_li_img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+          .right_li_name {
+            font-size: 14px;
+            width: 120px;
+          }
+          .right_li_job {
+            font-size: 14px;
+            width: 170px;
+          }
+          .right_li_task {
+            font-size: 14px;
+            width: 110px;
+          }
+          .right_li_pts {
+            font-size: 14px;
+            color: #6c5dd3;
+          }
         }
       }
     }

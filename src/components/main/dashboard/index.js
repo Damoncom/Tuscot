@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './index.scss';
 import GaugeChart from './gaugeChart';
 import GaugeChart2 from './GaugeChart2';
+import BasicBar from './basicBar';
 import top1 from '../../../img/dashboard/top1.png';
 import top2 from '../../../img/dashboard/top2.png';
 import top3 from '../../../img/dashboard/top3.png';
@@ -9,6 +10,7 @@ import top4 from '../../../img/dashboard/top4.png';
 import middleLeftIcon from '../../../img/dashboard/middle1.png';
 import middleMiddleIcon2 from '../../../img/dashboard/middle2.png';
 import middleMiddleIcon3 from '../../../img/dashboard/middle3.png';
+import employeesIcon from '../../../img/dashboard/user.png';
 
 export default function Dashboard() {
   // top列表数据
@@ -54,7 +56,8 @@ export default function Dashboard() {
   // top右侧数据
   const [topRightData, setTopRightData] = useState({
     title: 'Task Target Actual vs Prediction',
-    num: 10468,
+    // TODO:数据判断加 ,
+    num: '10,468',
     name: 'Tasks',
   });
 
@@ -85,6 +88,53 @@ export default function Dashboard() {
         botomName: 'Commercial',
         count: 122,
         icon: middleMiddleIcon3,
+      },
+    ],
+  });
+
+  // middle的right数据
+  const [middleRightData, setMiddleRightData] = useState({
+    title: 'Top Employees',
+    employees: [
+      {
+        id: 1,
+        icon: employeesIcon,
+        name: 'Rudolph G',
+        job: 'Product Designer',
+        tasks: 194,
+        pts: 1.23,
+      },
+      {
+        id: 2,
+        icon: employeesIcon,
+        name: 'Anna F',
+        job: 'Fronted Engnieer',
+        tasks: 194,
+        pts: 1.23,
+      },
+      {
+        id: 3,
+        icon: employeesIcon,
+        name: 'Mayco D.G',
+        job: 'Social Media',
+        tasks: 194,
+        pts: 1.23,
+      },
+      {
+        id: 4,
+        icon: employeesIcon,
+        name: 'Robert X',
+        job: 'Growth',
+        tasks: 194,
+        pts: 1.23,
+      },
+      {
+        id: 5,
+        icon: employeesIcon,
+        name: 'Robert Y',
+        job: 'Growth',
+        tasks: 194,
+        pts: 1.23,
       },
     ],
   });
@@ -143,19 +193,36 @@ export default function Dashboard() {
         </div>
         <div className="middle_middle">
           <div className="middle_middle_title">{middleMiddleData.title}</div>
-
-          {middleMiddleData.bottom.map((item) => (
-            <div className="middle_middle_bottom">
-              <img src={item.icon} className="middle_bottom_img" alt="icon" />
-              <div className="middle_bottom_text">
-                <p className="middle_bottom_title">{item.bottomTitle}</p>
-                <p className="middle_bottom_name">{item.botomName}</p>
+          <BasicBar />
+          <div className="m_m_bottom">
+            {middleMiddleData.bottom.map((item) => (
+              <div className="middle_middle_bottom" key={item.id}>
+                <img src={item.icon} className="middle_bottom_img" alt="icon" />
+                <div className="middle_bottom_text">
+                  <p className="middle_bottom_title">{item.bottomTitle}</p>
+                  <p className="middle_bottom_name">{item.botomName}</p>
+                </div>
+                <p className="middle_bottom_count">{item.count}</p>
               </div>
-              <p className="middle_bottom_count">{item.count}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        <div className="middle_right"></div>
+        <div className="middle_right">
+          <div className="middle_right_title">{middleRightData.title}</div>
+          <ul className="middle_right_ul">
+            {middleRightData.employees.map((item) => (
+              <li key={item.id} className="middle_right_li">
+                <div className="right_li_icon">
+                  <img src={item.icon} className="right_li_img" alt="icon" />
+                </div>
+                <p className="right_li_name">{item.name}</p>
+                <p className="right_li_job">{item.job}</p>
+                <p className="right_li_task">{item.tasks} Tasks</p>
+                <p className="right_li_pts">{item.pts} pts</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       {/* bottom */}

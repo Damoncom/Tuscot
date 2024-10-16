@@ -3,7 +3,7 @@ import './index.scss';
 import logo from '../../img/navigator/main_logo.png';
 import searchIcon from '../../img/navigator/manify.svg';
 import messageIcon from '../../img/navigator/bell.svg';
-import userIcon from '../../img/navigator/user.png';
+import userIcon from '../../img/navigator/user.jpg';
 import arrowIcon from '../../img/navigator/arrow.svg';
 
 export default function Navigator() {
