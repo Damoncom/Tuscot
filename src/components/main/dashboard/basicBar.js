@@ -26,9 +26,8 @@ function BasicBar() {
         data: [70, 60, 80, 75, 100],
         type: 'bar',
         barWidth: '60%',
-        // TODO: 圆角问题
         itemStyle: {
-          barBorderRadius: [20, 20, 0, 0],
+          borderRadius: [5, 5, 0, 0],
           color: '#EFF1F4',
         },
       },
@@ -38,7 +37,7 @@ function BasicBar() {
         barWidth: '60%',
         barGap: '-100%',
         itemStyle: {
-          barBorderRadius: [20, 20, 0, 0],
+          borderRadius: [5, 5, 0, 0],
           color: '#6c5dd3',
         },
       },

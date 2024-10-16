@@ -18,7 +18,6 @@ export default function Navigator() {
       {/* logo */}
       <div className="logoBox">
         <div className="imgBox">
-          {/* TODO:logo抠图 */}
           {/* TODO:iconfont的引用失效 */}
           {/* <img src="../../../public/logo/main_logo.png" className="logoImg" /> */}
           {/* <i className="iconfont icon-circulation-full"></i> */}

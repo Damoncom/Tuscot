@@ -29,10 +29,6 @@ const DefineRoutes = memo(() => {
         { path: '/Home/Analytics', element: <Analytics /> },
       ],
     },
-    // {
-    //   path: '/Dashboard',
-    //   element: <Dashboard />,
-    // },
     {
       path: '/Projects',
       element: <Projects />,

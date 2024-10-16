@@ -20,7 +20,7 @@ function SingleBar() {
         barGap: '-100%',
         data: [1200],
         itemStyle: {
-          barBorderRadius: [0, 50, 50, 0],
+          borderRadius: [0, 50, 50, 0],
           color: '#EFF1F4',
         },
       },
@@ -29,7 +29,7 @@ function SingleBar() {
         barWidth: '10%',
         data: [940],
         itemStyle: {
-          barBorderRadius: [0, 50, 50, 0],
+          borderRadius: [0, 50, 50, 0],
           color: '#6C5DD3',
         },
       },

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
 import dashboardIcon from '../../img/sidebar/manage.png';
@@ -55,15 +55,15 @@ export default function SideBar() {
   function chooseList(index) {
     setVisibleImageIndex((prevIndex) => (prevIndex === index ? 0 : index));
     if (index === 0) {
-      navigate('/Home/Dashboard');
+      navigate('/Home/Dashboard', { state: { index } });
     } else if (index === 1) {
-      navigate('/Home/Projects');
+      navigate('/Home/Projects', { state: { index } });
     } else if (index === 2) {
-      navigate('/Home/MyTask');
+      navigate('/Home/MyTask', { state: { index } });
     } else if (index === 3) {
-      navigate('/Home/Message');
+      navigate('/Home/Message', { state: { index } });
     } else if (index === 4) {
-      navigate('/Home/Analytics');
+      navigate('/Home/Analytics', { state: { index } });
     }
   }
 
