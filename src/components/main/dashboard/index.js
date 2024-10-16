@@ -3,6 +3,7 @@ import './index.scss';
 import GaugeChart from './gaugeChart';
 import GaugeChart2 from './GaugeChart2';
 import BasicBar from './basicBar';
+import SingleBar from './singleBar';
 import top1 from '../../../img/dashboard/top1.png';
 import top2 from '../../../img/dashboard/top2.png';
 import top3 from '../../../img/dashboard/top3.png';
@@ -139,6 +140,28 @@ export default function Dashboard() {
     ],
   });
 
+  // bottom数据
+  const [bottomData, setBottomData] = useState([
+    {
+      id: 1,
+      title: 'Tachnology & Design Team',
+      num: 940,
+      name: 'Employees',
+    },
+    {
+      id: 2,
+      title: 'Business & Marketing Team',
+      num: 194,
+      name: 'Employees',
+    },
+    {
+      id: 3,
+      title: 'Customer Operation Team',
+      num: 712,
+      name: 'Employees',
+    },
+  ]);
+
   return (
     <div className="dashboard">
       {/* top */}
@@ -161,12 +184,15 @@ export default function Dashboard() {
             </li>
           ))}
         </ul>
+
         <div className="top_right">
           <p className="right_title">{topRightData.title}</p>
-          <GaugeChart className="gauge_chart" />
-          <div className="total">
-            <p className="right_num">{topRightData.num}</p>
-            <p className="right_name">{topRightData.name}</p>
+          <div className="top_right_draft">
+            <GaugeChart />
+            <div className="total">
+              <p className="right_num">{topRightData.num}</p>
+              <p className="right_name">{topRightData.name}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -175,10 +201,12 @@ export default function Dashboard() {
       <div className="middle">
         <div className="middle_left">
           <div className="middle_left_title">{middleLeftData.title}</div>
-          <GaugeChart2 />
-          <div className="draft">
-            <p className="draft_num">{middleLeftData.num}%</p>
-            <p className="draft_name">{middleLeftData.name}</p>
+          <div className="draft_box">
+            <GaugeChart2 />
+            <div className="draft">
+              <p className="draft_num">{middleLeftData.num}%</p>
+              <p className="draft_name">{middleLeftData.name}</p>
+            </div>
           </div>
 
           <div className="middle_left_bottom">
@@ -193,7 +221,10 @@ export default function Dashboard() {
         </div>
         <div className="middle_middle">
           <div className="middle_middle_title">{middleMiddleData.title}</div>
-          <BasicBar />
+          <div className="m_m_draft">
+            <BasicBar />
+          </div>
+
           <div className="m_m_bottom">
             {middleMiddleData.bottom.map((item) => (
               <div className="middle_middle_bottom" key={item.id}>
@@ -226,7 +257,20 @@ export default function Dashboard() {
       </div>
 
       {/* bottom */}
-      <div className="bottom"></div>
+      <div className="bottom">
+        <ul className="bottom_ul">
+          {bottomData.map((item) => (
+            <li className="bottom_li" key={item.id}>
+              <div className="bottom_text">
+                <p className="bottom_title">{item.title}</p>
+                <p className="bottom_num">{item.num}</p>
+                <p className="bottom_name">{item.name}</p>
+                <SingleBar />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

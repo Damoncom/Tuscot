@@ -29,7 +29,7 @@ function BasicBar() {
         // TODO: 圆角问题
         itemStyle: {
           barBorderRadius: [20, 20, 0, 0],
-          color: '#B6B6B6',
+          color: '#EFF1F4',
         },
       },
       {
