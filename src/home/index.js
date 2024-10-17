@@ -8,6 +8,7 @@ import MyTask from '../components/main/myTask/index';
 import Message from '../components/main/message/index';
 import Analytics from '../components/main/analytics/index';
 import { Counter } from '../features/counter/Counter';
+import AntDesign from '../components/antDesign/index';
 
 export default function Home() {
   // 获取sideBar传参
@@ -19,12 +20,13 @@ export default function Home() {
     <>
       <Navigator />
       <SideBar />
-      {nowIndex.index === 0 && <Dashboard />}
+      {(nowIndex.index === 0) | (nowIndex === null) && <Dashboard />}
       {nowIndex.index === 1 && <Projects />}
       {nowIndex.index === 2 && <MyTask />}
       {nowIndex.index === 3 && <Message />}
       {nowIndex.index === 4 && <Analytics />}
-      <Counter />
+      {/* <Counter /> */}
+      {/* <AntDesign /> */}
     </>
   );
 }
