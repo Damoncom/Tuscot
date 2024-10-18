@@ -10,17 +10,24 @@ import Analytics from '../components/main/analytics/index';
 import { Counter } from '../features/counter/Counter';
 import AntDesign from '../components/antDesign/index';
 
+// TODO:根据现在路径判断控制index
 export default function Home() {
+  let nowIndex = 0;
   // 获取sideBar传参
   const { state } = useLocation();
 
-  const nowIndex = state;
+  if (state) {
+    nowIndex = state;
+  }
+  // const nowIndex = state;
 
   return (
     <>
       <Navigator />
       <SideBar />
-      {(nowIndex.index === 0) | (nowIndex === null) && <Dashboard />}
+      {(nowIndex.index === 0) | ((nowIndex === null) | (nowIndex === 0)) && (
+        <Dashboard />
+      )}
       {nowIndex.index === 1 && <Projects />}
       {nowIndex.index === 2 && <MyTask />}
       {nowIndex.index === 3 && <Message />}
