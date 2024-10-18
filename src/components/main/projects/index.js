@@ -68,6 +68,7 @@ export default function Projects() {
 
                   <Description>{item.description}</Description>
 
+                  {/* TODO: 根据adaptation的不同切换颜色 */}
                   <Head style={{ padding: '1% 0' }}>
                     {item.adaptation.map((item) => (
                       <Adaptation key={item.id}>{item.name}</Adaptation>
