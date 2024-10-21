@@ -21,23 +21,25 @@ import chatIcon from '../../../img/project/chatIcon.jpg';
 import listIcon from '../../../img/project/listMore.jpg';
 import userIcon from '../../../img/project/user.jpg';
 import smallListIcon from '../../../img/project/smallListMore.jpg';
-import { list } from './data';
 import { Avatar } from 'antd';
-import { color } from 'echarts';
+import { useSelector } from 'react-redux';
 
 export default function Projects() {
+  // 从redux存储桶里获取数据
+  const listData = useSelector((state) => state.listProject.listData);
+
   return (
     <Wrapper className="wrapper">
       {/* TODO: type切换 */}
       <TypeButton src={typeIcon}></TypeButton>
 
       <Main>
-        {list.map((item) => (
+        {listData.map((item) => (
           <List key={item.id}>
             <Head>
               <Title>{item.title}</Title>
               <p style={{ fontSize: '16px', color: '#B6B6B6' }}>
-                ({list.length})
+                {/* TODO: 保零操作 */}({listData.length})
               </p>
               <img
                 src={listIcon}

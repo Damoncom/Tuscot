@@ -1,6 +1,4 @@
-import { color } from 'echarts';
-
-export const list = [
+export const listData = [
   {
     id: 1,
     title: 'Working',
