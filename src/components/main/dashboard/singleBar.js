@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
 
-function SingleBar() {
+function SingleBar(data) {
   const getOption = () => ({
     legend: {},
-
     xAxis: {
       type: 'value',
       show: false,
@@ -27,10 +26,10 @@ function SingleBar() {
       {
         type: 'bar',
         barWidth: '10%',
-        data: [940],
+        data: [data.data.current],
         itemStyle: {
           borderRadius: [0, 50, 50, 0],
-          color: '#6C5DD3',
+          color: data.data.color,
         },
       },
     ],

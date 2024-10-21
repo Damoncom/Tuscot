@@ -29,22 +29,6 @@ const DefineRoutes = memo(() => {
         { path: '/Home/Analytics', element: <Analytics /> },
       ],
     },
-    {
-      path: '/Projects',
-      element: <Projects />,
-    },
-    {
-      path: '/MyTask',
-      element: <MyTask />,
-    },
-    {
-      path: '/Message',
-      element: <Message />,
-    },
-    {
-      path: '/Analytics',
-      element: <Analytics />,
-    },
   ]);
   return routes;
 });

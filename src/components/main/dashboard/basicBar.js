@@ -52,6 +52,4 @@ function BasicBar() {
   );
 }
 
-// TODO:传参处理
-
 export default BasicBar;
