@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './index.scss';
-import GaugeChart from './gaugeChart';
-import BasicBar from './basicBar';
-import SingleBar from './singleBar';
+import GaugeChart from './echarts/gaugeChart';
+import BasicBar from './echarts/basicBar';
+import SingleBar from './echarts/singleBar';
 import middleLeftIcon from '../../../img/dashboard/middle1.png';
 import { useSelector } from 'react-redux';
 

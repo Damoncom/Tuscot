@@ -23,6 +23,7 @@ import userIcon from '../../../img/project/user.jpg';
 import smallListIcon from '../../../img/project/smallListMore.jpg';
 import { list } from './data';
 import { Avatar } from 'antd';
+import { color } from 'echarts';
 
 export default function Projects() {
   return (
@@ -68,10 +69,15 @@ export default function Projects() {
 
                   <Description>{item.description}</Description>
 
-                  {/* TODO: 根据adaptation的不同切换颜色 */}
                   <Head style={{ padding: '1% 0' }}>
-                    {item.adaptation.map((item) => (
-                      <Adaptation key={item.id}>{item.name}</Adaptation>
+                    {item.adaptation.map((i) => (
+                      <Adaptation
+                        key={i.id}
+                        backgroundColor={i.color.bg}
+                        color={i.color.text}
+                      >
+                        {i.name}
+                      </Adaptation>
                     ))}
                   </Head>
 

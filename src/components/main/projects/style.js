@@ -52,10 +52,12 @@ export const Description = styled.p`
 `;
 
 export const Adaptation = styled.div`
+  min-width: 50px;
   padding: 10px;
-  background-color: #eeeff7;
   font-size: 13px;
-  color: #545dad;
+  background-color: ${(props) => props.backgroundColor};
+  color: ${(props) => props.color};
+  text-align: center;
   border-radius: 4px;
   margin: 3% 3% 1% 0;
 `;
