@@ -23,13 +23,11 @@ import userIcon from '../../../img/project/user.jpg';
 import smallListIcon from '../../../img/project/smallListMore.jpg';
 import { Avatar } from 'antd';
 import { useSelector } from 'react-redux';
+import { zeroPreserve } from '../../../utils/string-processing';
 
 export default function Projects() {
   // 从redux存储桶里获取数据
   const listData = useSelector((state) => state.listProject.listData);
-  {
-    /* TODO: 保零操作 */
-  }
 
   return (
     <Wrapper className="wrapper">
@@ -42,7 +40,7 @@ export default function Projects() {
             <Head>
               <Title>{item.title}</Title>
               <p style={{ fontSize: '16px', color: '#B6B6B6' }}>
-                ({listData.length})
+                ({zeroPreserve(listData.length)})
               </p>
               <img
                 src={listIcon}

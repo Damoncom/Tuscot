@@ -7,8 +7,19 @@ export function addComma(prev) {
       prev.toString().slice(0, length - 3) +
       ',' +
       prev.toString().slice(length - 3, length);
+  } else {
+    final = prev;
+  }
 
-    // console.log('处理过：', final);
+  return final;
+}
+
+export function zeroPreserve(prev) {
+  const length = prev.toString().length;
+  let final;
+
+  if (length === 1 && typeof length === 'number') {
+    final = '0' + prev;
   } else {
     final = prev;
   }

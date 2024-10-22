@@ -11,3 +11,5 @@ export default configureStore({
     listProject: listProjectReducer,
   },
 });
+
+// TODO: 增加redux-persist持久化处理
