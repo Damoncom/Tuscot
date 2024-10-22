@@ -12,7 +12,6 @@ import message2 from '../../img/sidebar/message2.png';
 import analytics from '../../img/sidebar/barChart.png';
 import analytics2 from '../../img/sidebar/barChart2.svg';
 
-// TODO:图片的导入
 export default function SideBar() {
   // 列表数据
   const [lists, setList] = useState([
