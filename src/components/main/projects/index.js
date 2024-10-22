@@ -27,6 +27,9 @@ import { useSelector } from 'react-redux';
 export default function Projects() {
   // 从redux存储桶里获取数据
   const listData = useSelector((state) => state.listProject.listData);
+  {
+    /* TODO: 保零操作 */
+  }
 
   return (
     <Wrapper className="wrapper">
@@ -39,7 +42,7 @@ export default function Projects() {
             <Head>
               <Title>{item.title}</Title>
               <p style={{ fontSize: '16px', color: '#B6B6B6' }}>
-                {/* TODO: 保零操作 */}({listData.length})
+                ({listData.length})
               </p>
               <img
                 src={listIcon}

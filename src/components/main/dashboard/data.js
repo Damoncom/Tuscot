@@ -50,7 +50,6 @@ export const topData = [
 // top右侧数据
 export const topRightData = {
   title: 'Task Target Actual vs Prediction',
-  // TODO:数据判断加 ,
   num: 10468,
   name: 'Tasks',
 };

@@ -5,6 +5,7 @@ import BasicBar from './echarts/basicBar';
 import SingleBar from './echarts/singleBar';
 import middleLeftIcon from '../../../img/dashboard/middle1.png';
 import { useSelector } from 'react-redux';
+import { addComma } from '../../../utils/string-processing';
 
 export default function Dashboard() {
   // 从redux存储桶里获取数据
@@ -47,7 +48,7 @@ export default function Dashboard() {
               }}
             />
             <div className="total">
-              <p className="right_num">{listData.topRightData.num}</p>
+              <p className="right_num">{addComma(listData.topRightData.num)}</p>
               <p className="right_name">{listData.topRightData.name}</p>
             </div>
           </div>
