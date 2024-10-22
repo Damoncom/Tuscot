@@ -55,7 +55,7 @@ export const Adaptation = styled.div`
   min-width: 50px;
   padding: 10px;
   font-size: 13px;
-  background-color: ${(props) => props.backgroundColor};
+  background: ${(props) => props.background};
   color: ${(props) => props.color};
   text-align: center;
   border-radius: 4px;

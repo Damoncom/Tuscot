@@ -10,7 +10,6 @@ import Analytics from '../components/main/analytics/index';
 import { Counter } from '../features/counter/Counter';
 import AntDesign from '../components/antDesign/index';
 
-// TODO:根据现在路径判断控制index
 export default function Home() {
   let nowIndex = 0;
   // 获取sideBar传参

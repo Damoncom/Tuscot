@@ -1,6 +1,6 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import './index.scss';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import dashboardIcon from '../../img/sidebar/manage.png';
 import dashboardIcon2 from '../../img/sidebar/manage2.png';
 import project from '../../img/sidebar/task.png';
@@ -49,11 +49,11 @@ export default function SideBar() {
   ]);
 
   //   每个项图片的显示状态,默认显示第一项
-  const [visibleImageIndex, setVisibleImageIndex] = useState(0);
+  const [visibleImageIndex, setVisibleImageIndex] = useState(null);
   const navigate = useNavigate();
-
   function chooseList(index) {
-    setVisibleImageIndex((prevIndex) => (prevIndex === index ? 0 : index));
+    setVisibleImageIndex((prevIndex) => (prevIndex === index ? null : index));
+
     if (index === 0) {
       navigate('/Home/Dashboard', { state: { index } });
     } else if (index === 1) {
@@ -66,6 +66,31 @@ export default function SideBar() {
       navigate('/Home/Analytics', { state: { index } });
     }
   }
+
+  // TODO: 更好的方法
+  const location = useLocation();
+  let fresh;
+  useEffect(() => {
+    // 获取当前路由路径
+    const pathname = location.pathname;
+
+    if (pathname === '/Home/Dashboard') {
+      fresh = 0;
+      setVisibleImageIndex(fresh);
+    } else if (pathname === '/Home/Projects') {
+      fresh = 1;
+      setVisibleImageIndex(fresh);
+    } else if (pathname === '/Home/MyTask') {
+      fresh = 2;
+      setVisibleImageIndex(fresh);
+    } else if (pathname === '/Home/Message') {
+      fresh = 3;
+      setVisibleImageIndex(fresh);
+    } else if (pathname === '/Home/Analytics') {
+      fresh = 4;
+      setVisibleImageIndex(fresh);
+    }
+  });
 
   return (
     <div className="sideBar">
@@ -80,7 +105,9 @@ export default function SideBar() {
           >
             <div className="imgBox">
               <img
-                src={visibleImageIndex === index ? item.icon2 : item.icon}
+                src={
+                  visibleImageIndex === (index | fresh) ? item.icon2 : item.icon
+                }
                 className="listIcon"
                 alt="icon"
               />

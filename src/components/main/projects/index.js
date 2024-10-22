@@ -74,9 +74,10 @@ export default function Projects() {
 
                   <Head style={{ padding: '1% 0' }}>
                     {item.adaptation.map((i) => (
+                      // TODO: 警报
                       <Adaptation
                         key={i.id}
-                        backgroundColor={i.color.bg}
+                        background={i.color.bg}
                         color={i.color.text}
                       >
                         {i.name}
